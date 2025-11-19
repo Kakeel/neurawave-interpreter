@@ -158,3 +158,29 @@ curl -X POST "https://<host>/interpret"
 -H "Authorization: Bearer <TOKEN>"
 -H "Content-Type: application/json"
 -d @app/examples/sample_request.json
+
+
+Environment variables (minimum)
+-------------------------------
+- `SECRET_TOKEN` — API auth token
+- `OPENAI_API_KEY` — optional for embeddings
+- `PINECONE_API_KEY` — optional
+- `VECTOR_DB_URL` — optional
+- `ENV` — dev/prod
+
+Deliverables (milestone 1)
+--------------------------
+1. /interpret endpoint implemented with embedding + clustering + scoring + sample_response output.  
+2. Tests and Dockerfile run instructions.  
+3. README and minimal logs.  
+
+Milestone 2 (post initial)
+--------------------------
+- Add vector DB persistence, caching, performance tuning.
+- Add /synthesize and /orchestrate endpoints.
+
+Change log
+----------
+- Version files with `meta.model_version` must include package version and date.
+
+
