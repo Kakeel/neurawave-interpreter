@@ -154,3 +154,7 @@ Dev notes & acceptance criteria
 
 cURL example
 ------------
+curl -X POST "https://<host>/interpret"
+-H "Authorization: Bearer <TOKEN>"
+-H "Content-Type: application/json"
+-d @app/examples/sample_request.json
