@@ -1,0 +1,98 @@
+{
+  "version": "v1.0",
+  "description": "Archetype-based message templates for NeuraWave. Each archetype has prioritized templates and 3 tiers: hook, short_copy (20-35 words), long_copy (75-150 words), visual_prompt.",
+  "archetypes": {
+    "oracle": {
+      "tone": "calm, prescient, precise",
+      "primary_goal": "Reveal insight and remove confusion",
+      "templates": [
+        {
+          "name": "clariﬁed_path",
+          "hook": "There’s a clearer way forward.",
+          "short_copy": "You’ve been searching. Here’s the one choice that closes the gap between wanting and doing — with clarity, not noise.",
+          "long_copy": "Most options add noise. This gives a clear next step that produces tangible results in days, not months. Start with the smallest action and measure the shift.",
+          "visual_prompt": "Minimal scene; a quiet doorway of light; a single path leading to a city skyline; text overlay: 'A clear next step.'"
+        },
+        {
+          "name": "inevitability",
+          "hook": "The right move becomes obvious when you see it.",
+          "short_copy": "When the choice aligns with where you actually want to go, hesitation disappears. Here’s the option that makes sense.",
+          "long_copy": "We remove the illusions and show the persistent pattern. When you act on the pattern, results follow. This isn’t hype — it’s inevitable.",
+          "visual_prompt": "Close-up of a person removing a blindfold and focusing, subtle city background, authoritative typography."
+        }
+      ]
+    },
+    "shadow": {
+      "tone": "incisive, reflective, exposing",
+      "primary_goal": "Expose hidden objections and surface the true barrier",
+      "templates": [
+        {
+          "name": "mirror",
+          "hook": "You’re closer than you think — but something’s holding you back.",
+          "short_copy": "Most hesitation comes from a single, fixable misbelief. Name it. Fix it. Move forward.",
+          "long_copy": "We’ll show you the single friction point that’s stopping your move and the exact action to remove it. Try the one step that cancels the doubt.",
+          "visual_prompt": "A mirror reflecting the back of a person standing before a closed door, faint annotations highlighting the door."
+        },
+        {
+          "name": "truth_exposed",
+          "hook": "The hidden reason you didn’t act is obvious once named.",
+          "short_copy": "Call out the quiet objection and you remove its power. Start with this small test.",
+          "long_copy": "Uncomfortable truth is the fastest route to clarity. We call it out, neutralize it, and replace it with a single measurable action.",
+          "visual_prompt": "Monochrome portrait with a small highlighted annotation like 'this is the real reason.'"
+        }
+      ]
+    },
+    "warrior": {
+      "tone": "direct, activating, disciplined",
+      "primary_goal": "Create momentum and decisive action",
+      "templates": [
+        {
+          "name": "go_now",
+          "hook": "Step in. Level up. Start now.",
+          "short_copy": "You’re ready. This one action is the difference between watching and leading. Do it tonight.",
+          "long_copy": "Stop waiting for the perfect conditions. Build momentum with a focused action that produces visible results. Start with one commitment and honor it.",
+          "visual_prompt": "High-contrast action shot of someone taking a decisive step forward; bold typography."
+        }
+      ]
+    },
+    "navigator": {
+      "tone": "reassuring, practical, systematic",
+      "primary_goal": "Reduce perceived risk and make the step safe",
+      "templates": [
+        {
+          "name": "safe_path",
+          "hook": "A simple, safe path forward — no surprises.",
+          "short_copy": "We make the next move predictable and risk-limited. Try our step and see how it fits.",
+          "long_copy": "Clear steps, clear guarantees. Designed for people who value certainty and want predictable outcomes. Start with a low-risk test.",
+          "visual_prompt": "Clean UI mock showing steps and a small badge: 'risk-free'."
+        }
+      ]
+    },
+    "architect": {
+      "tone": "methodical, evidence-driven, structural",
+      "primary_goal": "Give structure and measurable steps",
+      "templates": [
+        {
+          "name": "systematic",
+          "hook": "A proven system, broken into measurable steps.",
+          "short_copy": "Follow a tested sequence that produces measurable progress in short cycles.",
+          "long_copy": "This approach removes guesswork. Execute the small, tested routines and measure improvement weekly.",
+          "visual_prompt": "Grid layout, icons for steps, KPI numbers."
+        }
+      ]
+    },
+    "sovereign": {
+      "tone": "elevated, composed, authoritative",
+      "primary_goal": "Elevate identity; sell status & confidence",
+      "templates": [
+        {
+          "name": "claim_status",
+          "hook": "Claim the position your work deserves.",
+          "short_copy": "This is for people who expect results and respect the process. Reserve your spot.",
+          "long_copy": "Join a select group that prioritizes results and discipline. We offer a focused path to the outcome you want; it’s decisive and premium.",
+          "visual_prompt": "Minimal luxurious scene; muted colors; serif typography."
+        }
+      ]
+    }
+  }
+}
