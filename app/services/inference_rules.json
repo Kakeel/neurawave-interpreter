@@ -1,0 +1,80 @@
+{
+  "version": "v1.0",
+  "description": "Heuristic mapping from observed signals to emotional states, with weights and trigger keywords.",
+  "signal_tiers": {
+    "HIGH": ["search_queries", "long_comments", "direct_messages", "profile_visits", "add_to_cart", "video_watch_50"],
+    "MEDIUM": ["likes", "shares", "saves", "page_views"],
+    "LOW": ["impressions", "short_views", "scrolls"]
+  },
+  "emotions": ["hunger", "fear", "confusion", "pain", "hope", "identity"],
+  "keyword_signals": {
+    "intent": ["buy", "book", "register", "ticket", "purchase", "reserve", "checkout", "order"],
+    "friction": ["expensive", "price", "too expensive", "no time", "busy", "can't", "don’t", "refund", "return", "complicated"],
+    "hesitation": ["not sure", "maybe later", "thinking", "considering", "unsure"],
+    "aspiration": ["status", "upgrade", "best", "exclusive", "top", "premium"],
+    "pain": ["tired", "frustrated", "broken", "hate", "annoyed"],
+    "hope": ["looking forward", "excited", "can't wait", "hope"]
+  },
+  "rules": [
+    {
+      "name": "High Intent",
+      "conditions": [
+        {"signal_tier": "HIGH"},
+        {"keyword_presence": "intent", "min_count": 1}
+      ],
+      "result": {"emotion": "hunger", "intent_score_delta": 0.5, "explanation": "Strong direct intent keywords in high-tier signal"}
+    },
+    {
+      "name": "Price Friction",
+      "conditions": [
+        {"keyword_presence": "friction", "min_count": 1}
+      ],
+      "result": {"emotion": "fear", "friction_delta": 0.6, "explanation": "Price or cost objections detected"}
+    },
+    {
+      "name": "Confused Browsing",
+      "conditions": [
+        {"signal_tier": "MEDIUM"},
+        {"keyword_presence": "hesitation", "min_count": 1}
+      ],
+      "result": {"emotion": "confusion", "intent_delta": 0.2, "explanation": "Light interest with hesitation"}
+    },
+    {
+      "name": "Aspirational Signals",
+      "conditions": [
+        {"keyword_presence": "aspiration", "min_count": 1}
+      ],
+      "result": {"emotion": "identity", "intent_delta": 0.3, "explanation": "Status/aspiration language present"}
+    },
+    {
+      "name": "Pain Trigger",
+      "conditions": [
+        {"keyword_presence": "pain", "min_count": 1}
+      ],
+      "result": {"emotion": "pain", "friction_delta": 0.4, "explanation": "User complains or shows frustration"}
+    },
+    {
+      "name": "Hope Signals",
+      "conditions": [
+        {"keyword_presence": "hope", "min_count": 1}
+      ],
+      "result": {"emotion": "hope", "intent_delta": 0.2, "explanation": "Open to possibilities"}
+    }
+  ],
+  "scoring": {
+    "base_intent_from_tier": {"HIGH": 0.6, "MEDIUM": 0.3, "LOW": 0.1},
+    "friction_from_keywords": {"expensive": 0.4, "no time": 0.3, "complicated": 0.5},
+    "emotion_valence_map": {"hunger": 0.7, "hope": 0.6, "identity": 0.5, "confusion": 0.0, "fear": -0.3, "pain": -0.6},
+    "combine_method": "weighted_sum"
+  },
+  "examples": [
+    {
+      "input_signals": [{"tier":"HIGH","text":"Where can I buy tickets now?"}],
+      "output": {"emotion":"hunger","intent":0.8,"friction":0.1}
+    },
+    {
+      "input_signals": [{"tier":"MEDIUM","text":"Looks good, but price is high"}],
+      "output": {"emotion":"fear","intent":0.3,"friction":0.6}
+    }
+  ]
+}
