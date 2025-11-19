@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai
+scikit-learn
+numpy
+pandas
+hdbscan
+python-dotenv
+requests
