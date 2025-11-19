@@ -177,6 +177,218 @@ Deliverables (milestone 1)
 Milestone 2 (post initial)
 --------------------------
 - Add vector DB persistence, caching, performance tuning.
+
+Purpose (continuation)
+
+The NeuraWave Interpreter transforms human psychological signals into a structured, emotionally-attuned marketing output.
+It aligns emotional state → archetype → message → confidence → next actions.
+
+The interpreter MUST:
+
+Avoid banned content
+
+Maintain brand DNA
+
+Infer emotional state
+
+Generate a stable, explainable output
+
+Stay deterministic given identical input
+
+2. Endpoint Definition
+POST /interpret
+
+Consumes:
+InterpretRequest
+Returns:
+InterpretResponse
+
+3. Input Schema (InterpretRequest)
+{
+  "brand_dna": "string",
+  "banned_phrases": ["string"],
+  "audience_profile": {},
+  "campaign_history": [],
+  "request_context": {}
+}
+
+
+MANDATORY FIELDS
+
+brand_dna
+
+banned_phrases
+
+audience_profile.name
+
+request_context.channel
+
+request_context.creative_message
+
+4. Output Schema (InterpretResponse)
+{
+  "inferred_emotional_state": "string",
+  "selected_archetype": "string",
+  "response_message": "string",
+  "confidence_score": 0.0
+}
+
+5. System Architecture
+5.1 Core Files
+app/
+  main.py
+  services/
+      interpreter.py
+      inference.py
+      templates.py
+      filter.py
+  schemas/
+      interpret_request.json
+      interpret_response.json
+
+6. Processing Pipeline
+Step 1 — Validate Input
+
+Ensure schema compliance
+
+Reject missing required fields
+
+Reject malformed JSON
+
+Errors:
+
+400_INVALID_REQUEST
+
+400_SCHEMA_MISMATCH
+
+Step 2 — Apply Banned Phrase Filter
+
+Input fields run through filtering:
+
+creative messages
+
+inferred signals
+
+generated output
+
+intermediate template outputs
+
+If violation →
+
+sanitize OR
+
+fail with 422_BANNED_PHRASE_DETECTED
+
+Step 3 — Emotional State Inference
+
+Inputs:
+
+CTR / CVR
+
+search queries
+
+comments
+
+engagement patterns
+
+audience psychographics
+
+Rules read from inference_rules.json.
+
+Interpreter assigns one of:
+
+Hesitation
+
+Curiosity
+
+Frustration
+
+Ambition
+
+Defiance
+
+Overwhelm
+
+Indifference
+
+If no rule matches → default = “Hesitation”.
+
+Step 4 — Archetype Selection
+
+Mapping table:
+
+Emotional State	Archetype
+Hesitation	Oracle
+Curiosity	Guide
+Frustration	Warrior
+Ambition	Visionary
+Defiance	Maverick
+Overwhelm	Architect
+Indifference	Shadow
+
+Override rules:
+
+If conversion intent high → Oracle
+
+If urgency high → Warrior
+
+If luxury psychographic → Visionary
+
+Step 5 — Generate Response
+
+Process:
+
+Load template for selected archetype
+
+Adapt tone to match brand DNA
+
+Merge signals (reason for hesitating, desired action)
+
+Produce 1–2 candidate messages
+
+Validate for banned words
+
+Select final output
+
+Templates come from templates.json.
+
+Step 6 — Confidence Score
+
+Formula:
+
+confidence = 
+ 0.4 * signal_strength +
+ 0.3 * rule_match_density +
+ 0.2 * template_alignment +
+ 0.1 * message_safety
+
+
+Returns float range 0.0 → 1.0.
+
+7. Error Handling
+422_BANNED_PHRASE_DETECTED
+
+Triggered when:
+
+creative message includes taboo content
+
+generated response unintentionally outputs unsafe content
+
+500_ENGINE_FAILURE
+
+Fallback response:
+
+"Unable to generate a safe interpreted output."
+
+8. Future Extensions
+
+Embedding-based inference
+
+Multi-message chain-of-thought
+
+Predictive user state evolution
+
+Real-time UX analysis
 - Add /synthesize and /orchestrate endpoints.
 
 Change log
