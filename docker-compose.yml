@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  neurawave-interpreter:
+    build: .
+    container_name: neurawave-interpreter
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_TOKEN=changeme
+      - OPENAI_API_KEY=
+      - PINECONE_API_KEY=
+      - ENV=dev
+    volumes:
+      - ./:/app:cached
+    restart: "no"
