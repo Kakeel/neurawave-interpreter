@@ -1,5 +1,5 @@
 {
-  "version": "v1.0",
+  "version": "v1.1",
   "description": "Archetype-based message templates for NeuraWave. Each archetype has prioritized templates and 3 tiers: hook, short_copy (20-35 words), long_copy (75-150 words), visual_prompt.",
   "archetypes": {
     "oracle": {
@@ -7,7 +7,7 @@
       "primary_goal": "Reveal insight and remove confusion",
       "templates": [
         {
-          "name": "clariﬁed_path",
+          "name": "clarified_path",
           "hook": "There’s a clearer way forward.",
           "short_copy": "You’ve been searching. Here’s the one choice that closes the gap between wanting and doing — with clarity, not noise.",
           "long_copy": "Most options add noise. This gives a clear next step that produces tangible results in days, not months. Start with the smallest action and measure the shift.",
@@ -19,6 +19,13 @@
           "short_copy": "When the choice aligns with where you actually want to go, hesitation disappears. Here’s the option that makes sense.",
           "long_copy": "We remove the illusions and show the persistent pattern. When you act on the pattern, results follow. This isn’t hype — it’s inevitable.",
           "visual_prompt": "Close-up of a person removing a blindfold and focusing, subtle city background, authoritative typography."
+        },
+        {
+          "name": "insight_puncture",
+          "hook": "You’re missing the single fact that makes this obvious.",
+          "short_copy": "Most confusion dissolves with one observation. See that fact. Act on it. The route becomes clear.",
+          "long_copy": "We reveal the structural truth behind the noise — the one detail that flips hesitation into action. Apply it, measure it, repeat.",
+          "visual_prompt": "Diagram highlighting one node in a network, with a focused pointer."
         }
       ]
     },
@@ -39,6 +46,13 @@
           "short_copy": "Call out the quiet objection and you remove its power. Start with this small test.",
           "long_copy": "Uncomfortable truth is the fastest route to clarity. We call it out, neutralize it, and replace it with a single measurable action.",
           "visual_prompt": "Monochrome portrait with a small highlighted annotation like 'this is the real reason.'"
+        },
+        {
+          "name": "remove_excuse",
+          "hook": "Name the excuse. Replace it with a micro-test.",
+          "short_copy": "Excuses dissolve under a small test. Do the one thing that invalidates the excuse.",
+          "long_copy": "We design a micro-experiment that disproves the active excuse. It’s fast, controlled, and decisive — exactly what dismantles doubt.",
+          "visual_prompt": "A small checklist with one item checked and the rest faded."
         }
       ]
     },
@@ -52,6 +66,13 @@
           "short_copy": "You’re ready. This one action is the difference between watching and leading. Do it tonight.",
           "long_copy": "Stop waiting for the perfect conditions. Build momentum with a focused action that produces visible results. Start with one commitment and honor it.",
           "visual_prompt": "High-contrast action shot of someone taking a decisive step forward; bold typography."
+        },
+        {
+          "name": "finish_line",
+          "hook": "Finish what you started.",
+          "short_copy": "The next step completes the momentum you already built. Take it and own the result.",
+          "long_copy": "You’ve invested energy. Convert it into visible progress with a single decisive move. No more hesitation — move and measure.",
+          "visual_prompt": "A finish line tape being cut with dynamic motion."
         }
       ]
     },
@@ -65,6 +86,13 @@
           "short_copy": "We make the next move predictable and risk-limited. Try our step and see how it fits.",
           "long_copy": "Clear steps, clear guarantees. Designed for people who value certainty and want predictable outcomes. Start with a low-risk test.",
           "visual_prompt": "Clean UI mock showing steps and a small badge: 'risk-free'."
+        },
+        {
+          "name": "guaranteed_first",
+          "hook": "Try the first step with a simple safety net.",
+          "short_copy": "Start with a low-commitment action backed by clear safeguards. No risk, only information.",
+          "long_copy": "We remove uncertainty by reducing commitment and documenting every result. See what works before you scale effort or spend.",
+          "visual_prompt": "Badge saying '30-day guarantee' alongside step visuals."
         }
       ]
     },
@@ -78,6 +106,13 @@
           "short_copy": "Follow a tested sequence that produces measurable progress in short cycles.",
           "long_copy": "This approach removes guesswork. Execute the small, tested routines and measure improvement weekly.",
           "visual_prompt": "Grid layout, icons for steps, KPI numbers."
+        },
+        {
+          "name": "metric_loop",
+          "hook": "Measure, adjust, repeat — a simple loop.",
+          "short_copy": "Small tests and measurable outcomes beat guesses. Run this loop and scale what works.",
+          "long_copy": "We prioritize experiments that give measurable answers. Run this week-long test and use the numbers to decide next steps.",
+          "visual_prompt": "A small dashboard mock showing week-over-week improvements."
         }
       ]
     },
@@ -91,6 +126,89 @@
           "short_copy": "This is for people who expect results and respect the process. Reserve your spot.",
           "long_copy": "Join a select group that prioritizes results and discipline. We offer a focused path to the outcome you want; it’s decisive and premium.",
           "visual_prompt": "Minimal luxurious scene; muted colors; serif typography."
+        },
+        {
+          "name": "quiet_authority",
+          "hook": "Authority doesn’t shout. It commands quietly.",
+          "short_copy": "Claim the upgrade reserved for those who plan and deliver. Align with the standard you expect.",
+          "long_copy": "Elevate your choices by aligning with a method that produces consistent results. This is not for the curious — it’s for the committed.",
+          "visual_prompt": "Subtle luxury scene with reserved color palette and minimal copy."
+        }
+      ]
+    },
+    "additional": {
+      "tone": "miscellaneous high-impact shots",
+      "primary_goal": "Extra templates for nuance (hesitation -> decision, desire -> permission, fear -> controlled risk, overwhelm -> focus, indifference -> engagement)",
+      "templates": [
+        {
+          "name": "clarity_through_contrast",
+          "hook": "You already know the difference between where you are and where you want to be.",
+          "short_copy": "The gap isn’t information — it’s movement. Here’s the step that removes the hesitation and makes the direction obvious.",
+          "long_copy": "Clarity often emerges from contrast. We show you the exact minimal action that makes the right path undeniable. Test it and watch indecision fall away.",
+          "visual_prompt": "Split-screen: left blurred noise, right crisp path with a single highlighted step."
+        },
+        {
+          "name": "remove_internal_excuse",
+          "hook": "Name the excuse. Replace it with a micro-test.",
+          "short_copy": "You delay because you wait for certainty. Certainty comes after action. Make the move. Let results show you the truth.",
+          "long_copy": "Excuses survive without tests. We design a micro-experiment that disproves the active excuse and replaces it with measurable progress.",
+          "visual_prompt": "A small test card with one metric and a start button."
+        },
+        {
+          "name": "internal_alignment",
+          "hook": "You’ve wanted this longer than you admit.",
+          "short_copy": "The hesitation isn’t about capacity — it’s about permission. Choose what already aligns with you.",
+          "long_copy": "Decision fatigue often hides true preference. Strip social signals; follow the internal alignment. That single choice compounds.",
+          "visual_prompt": "Portrait with a small highlighted inner compass graphic."
+        },
+        {
+          "name": "drop_social_filter",
+          "hook": "Ignore the noise for a moment.",
+          "short_copy": "What choice matches your priorities, not projected opinions? Follow that. It sustains momentum.",
+          "long_copy": "Social friction adds cognitive load. Remove it; choose the action that maps to your objectives alone. The result is sturdier and faster.",
+          "visual_prompt": "Muted crowd background, a single person stepping forward."
+        },
+        {
+          "name": "rational_risk",
+          "hook": "Break down the risk. It’s smaller than you imagine.",
+          "short_copy": "You avoid the unknown. We make the risk visible and slice it into controlled steps. Move with calculated confidence.",
+          "long_copy": "Risk is a matrix of probability and impact. We reduce it via staged commitments—each one gives information and reduces downside.",
+          "visual_prompt": "A risk matrix with one cell highlighted and annotated."
+        },
+        {
+          "name": "reframe_loss",
+          "hook": "The real cost is staying still.",
+          "short_copy": "You measure downside but ignore the compound cost of inaction. Act now while the window is wide.",
+          "long_copy": "Inaction has its own friction which compounds silently. We quantify that cost and show a practical small move to reduce it.",
+          "visual_prompt": "Hourglass overlay on a paused scene."
+        },
+        {
+          "name": "collapse_noise",
+          "hook": "You don’t need more options — you need fewer.",
+          "short_copy": "Strip it down to the next irreversible improvement. That's your signal to act.",
+          "long_copy": "Complexity paralyzes. Distill to the smallest lever that moves outcomes. Act on that lever and observe clarity follow.",
+          "visual_prompt": "A cluttered desk transitioning to a single clean tool and hands using it."
+        },
+        {
+          "name": "false_priority",
+          "hook": "Not everything deserves your attention.",
+          "short_copy": "Identify the one variable that shifts the outcome most. Do that and everything else falls into place.",
+          "long_copy": "Prioritization is an act of subtraction. We point to the highest-ROI variable and make the first move measurable and reversible.",
+          "visual_prompt": "A spotlight on a single lever amid many dimmed options."
+        },
+        {
+          "name": "reignite_interest",
+          "hook": "If this didn’t matter you wouldn’t still be looking at it.",
+          "short_copy": "Follow the quiet preference you haven’t voiced. It points to the thing that matters.",
+          "long_copy": "Persistence in attention signals latent preference. Convert that attention into exploratory action and measure whether it sticks.",
+          "visual_prompt": "A small flame being nurtured into a steady light."
+        },
+        {
+          "name": "disrupt_passivity",
+          "hook": "Break the passive loop with a small irreversible step.",
+          "short_copy": "Momentum follows commitment, not contemplation. Pick the smallest step that changes the state.",
+          "long_copy": "Passive observation is a stable state. Introduce a micro-commitment that forces re-evaluation and triggers forward motion.",
+          "visual_prompt": "A foot stepping off a curb into motion, shallow depth-of-field."
         }
       ]
     }
