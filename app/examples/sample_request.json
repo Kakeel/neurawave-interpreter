@@ -1,0 +1,46 @@
+{
+  "brand_dna": "Your brand DNA goes here.",
+  "banned_phrases": ["sex", "alcohol", "weapons", "gambling", "terrorism",
+    "death", "crime", "racism", "sexism", "extremism"],
+  "audience_profile": {
+    "name": "KSA Audience Test",
+    "age_range": "21-45",
+    "location": "KSA/Riyadh",
+    "psychographics": ["Travelers", "Luxury Shoppers", "High-net-worth individuals", "Investment"],
+    "primary_goal": "Influence consideration towards completing a conversion on the platform",
+    "primary_pain": "Hesitation in performing an action",
+    "signal_sources": [
+      "facebook_comments", "search_queries", "x_posts", "google_search_queries",
+      "Instagram_page_follows", "Instagram_likes", "Instagram_shares",
+      "Instagram_comments", "Instagram_profile_visits", "snapchat_swipes"
+    ]
+  },
+  "campaign_inputs": [
+    {
+      "channel": "Meta",
+      "creative_message": "Come to Riyadh to experience the best gaming arena",
+      "CTR": 0.63,
+      "CVR": 4.81,
+      "spend": 1024.3
+    },
+    {
+      "channel": "Meta",
+      "creative_message": "Buy a ticket to AlUla Festival City and watch your favorite bands live",
+      "CTR": 0.77,
+      "CVR": 1.09,
+      "spend": 433.44
+    },
+    {
+      "channel": "Meta",
+      "creative_message": "Feel the electric energy of Ahmad Saad performing live at Thanaya AlUla. Book now and get 30% off",
+      "CTR": 1.98,
+      "CVR": 3.3,
+      "spend": 1118.64
+    }
+  ],
+  "signals": [
+    { "source": "facebook_comments", "text": "This looks exciting, but is it worth the price?" },
+    { "source": "Instagram_likes", "text": "🔥🔥🔥" },
+    { "source": "search_queries", "text": "best events in Riyadh this weekend" }
+  ]
+}
