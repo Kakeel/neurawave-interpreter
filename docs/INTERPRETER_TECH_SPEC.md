@@ -178,7 +178,10 @@ Milestone 2 (post initial)
 --------------------------
 - Add vector DB persistence, caching, performance tuning.
 
+
+
 Purpose (continuation)
+-------------------------
 
 The NeuraWave Interpreter transforms human psychological signals into a structured, emotionally-attuned marketing output.
 It aligns emotional state → archetype → message → confidence → next actions.
@@ -195,15 +198,21 @@ Generate a stable, explainable output
 
 Stay deterministic given identical input
 
-2. Endpoint Definition
+Endpoint Definition
+-----------------------
+
 POST /interpret
+
 
 Consumes:
 InterpretRequest
 Returns:
 InterpretResponse
 
-3. Input Schema (InterpretRequest)
+Input Schema (InterpretRequest)
+--------------------------------
+
+
 {
   "brand_dna": "string",
   "banned_phrases": ["string"],
@@ -225,7 +234,12 @@ request_context.channel
 
 request_context.creative_message
 
-4. Output Schema (InterpretResponse)
+
+
+Output Schema (InterpretResponse)
+---------------------------------
+
+
 {
   "inferred_emotional_state": "string",
   "selected_archetype": "string",
@@ -233,8 +247,13 @@ request_context.creative_message
   "confidence_score": 0.0
 }
 
-5. System Architecture
+
+
+System Architecture
+---------------------
+
 5.1 Core Files
+
 app/
   main.py
   services/
@@ -246,8 +265,14 @@ app/
       interpret_request.json
       interpret_response.json
 
-6. Processing Pipeline
+
+
+Processing Pipeline
+------------------------
+
+
 Step 1 — Validate Input
+---
 
 Ensure schema compliance
 
@@ -261,7 +286,9 @@ Errors:
 
 400_SCHEMA_MISMATCH
 
+
 Step 2 — Apply Banned Phrase Filter
+---
 
 Input fields run through filtering:
 
@@ -279,7 +306,9 @@ sanitize OR
 
 fail with 422_BANNED_PHRASE_DETECTED
 
+
 Step 3 — Emotional State Inference
+---
 
 Inputs:
 
@@ -313,7 +342,10 @@ Indifference
 
 If no rule matches → default = “Hesitation”.
 
+
+
 Step 4 — Archetype Selection
+---
 
 Mapping table:
 
@@ -334,7 +366,10 @@ If urgency high → Warrior
 
 If luxury psychographic → Visionary
 
+
+
 Step 5 — Generate Response
+---
 
 Process:
 
@@ -352,7 +387,10 @@ Select final output
 
 Templates come from templates.json.
 
+
+
 Step 6 — Confidence Score
+---
 
 Formula:
 
@@ -362,10 +400,15 @@ confidence =
  0.2 * template_alignment +
  0.1 * message_safety
 
-
+-
 Returns float range 0.0 → 1.0.
+-
+
+
 
 7. Error Handling
+   ------------------------
+   
 422_BANNED_PHRASE_DETECTED
 
 Triggered when:
@@ -380,7 +423,10 @@ Fallback response:
 
 "Unable to generate a safe interpreted output."
 
+
+
 8. Future Extensions
+   -----------------------------
 
 Embedding-based inference
 
